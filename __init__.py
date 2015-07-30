@@ -100,8 +100,20 @@ tcp_server = TCPServer()
 
 if __name__ == '__main__':
     # pydevd.settrace(DEBUGGER_IP, port=32457, stdoutToServer=True, stderrToServer=True)
-    application.listen(8888)
-    tcp_server.listen(9999)
+    from optparse import OptionParser
+    print('running...')
+    default_tcp_port = 9999
+    default_ws_port = 8888
+    parser = OptionParser()
+    parser.add_option("-t", "--tcp_port", dest="tcp_port",
+                      help="TCP connection port", metavar="TCP_PORT")
+    parser.add_option("-w", "--ws_port", dest="ws_port",
+                      help="WebSocket connection port", metavar="WS_PORT")
+    (options, args) = parser.parse_args()
+    ws_port = options.ws_port if options.ws_port else default_ws_port
+    tcp_port = options.tcp_port if options.tcp_port else default_tcp_port
+    application.listen(ws_port)
+    tcp_server.listen(tcp_port)
     io_loop = tornado.ioloop.IOLoop.instance()
     try:
         io_loop.start()
