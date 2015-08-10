@@ -21,4 +21,3 @@ class Cache(memcache.Client):
             user_id = int(self.get(sess_id_key))
         return user_id
 
-mc = Cache(['127.0.0.1:11211'])

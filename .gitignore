@@ -4,3 +4,4 @@ bin
 include
 lib
 pycharm-debug-py3k.egg
+node_modules
