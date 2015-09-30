@@ -29,7 +29,7 @@ class WSConnectionPool(object):
     def send_notification(self, notification):
         users = notification['users']
         del notification['users']
-        if (notification['type'] == 'message') or (notification['type'] == 'friends_proposal'):
+        if (notification['type'] == 'message') or (notification['type'] == 'friends_proposal') or (notification['type'] == 'gift'):
             for user_id in users:
                 try:
                     for connection in self.connection_pool[user_id]:
@@ -85,6 +85,7 @@ class WebSocket(tornado.websocket.WebSocketHandler):
 
     def check_origin(self, origin):
         return True
+
 
 class TestPage(tornado.web.RequestHandler):
     def get(self):
