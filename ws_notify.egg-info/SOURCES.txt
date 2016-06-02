@@ -1,0 +1,7 @@
+setup.py
+cache/__init__.py
+ws_notify.egg-info/PKG-INFO
+ws_notify.egg-info/SOURCES.txt
+ws_notify.egg-info/dependency_links.txt
+ws_notify.egg-info/requires.txt
+ws_notify.egg-info/top_level.txt

@@ -1,0 +1,14 @@
+Metadata-Version: 1.0
+Name: ws-notify
+Version: 0.0.5
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: # web-socket-notification-server
+        
+        Сервер оповещений браузера о событиях, использующий протокол WebSocket
+        Принимает пакет данных от бэкенда по TCP, и отправляет в браузер по WebSocket
+        
+Platform: UNKNOWN

@@ -92,6 +92,7 @@ class TestPage(tornado.web.RequestHandler):
         loader = tornado.template.Loader("./")
         self.write(loader.load("index.html").generate())
 
+
 class TCPServer(tornado.tcpserver.TCPServer):
 
     def handle_stream(self, stream, address):
